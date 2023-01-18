@@ -2,7 +2,9 @@
 title: "A UN Report on the Relationship between GDP and Life Expectancy"
 author: "Yumino"
 date: '2023-01-18'
-output: html_document
+output: 
+        md_document:
+                variant: markdown_github
 ---
 
 ```{r setup, include=FALSE}
