@@ -1,0 +1,31 @@
+---
+title: "A UN Report on the Relationship between GDP and Life Expectancy"
+author: "Yumino"
+date: '2023-01-18'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load-packages}
+library(tidyverse)
+```
+
+This report was prepared to the attention of the United Nations. It analyzes the relationship between a country's GDP, its life expectancy and CO2 emissions. Our goal is to determine to what degree a country’s economic strength or weakness may be related to its public health status and impact on climate pollution. We hypothesize that both life expectancy and CO2 emissions increase with a country's GDP.
+
+```{r read data}
+gapminder_1997 <- read_csv("data/gapminder_1997.csv")
+```
+
+```{r gdp_lifeExp_1997 plot}
+# make plot of GDP (x) vs life expectancy (y)
+ggplot(data = gapminder_1997, aes(x = gdpPercap, y = lifeExp, color = continent)) +
+        geom_point() +
+        scale_color_brewer(palette = "YlGnBu") +
+        labs(x = "GDP Per Capita", y = "Life Expectancy") +
+        theme_bw()
+```
+
+
